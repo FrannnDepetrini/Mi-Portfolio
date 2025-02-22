@@ -1,9 +1,9 @@
 import "./App.css";
-
+import Page from "./page/Page";
 function App() {
   return (
     <>
-      <h1>Mi Portfolio</h1>
+      <Page></Page>
     </>
   );
 }
