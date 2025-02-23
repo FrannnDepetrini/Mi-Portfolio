@@ -1,24 +1,34 @@
 import { Home, About, Experience, Projects, Studies } from "../views/index";
+
 import "./Page.css";
+
+const handleScroll = (sectionId) => {
+  const section = document.getElementById(sectionId);
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Page = () => {
   return (
     <div className="page_container">
-      <div className="slides home">
-        <Home></Home>
-      </div>
-      <div className="slides about">
+      <section id="home" className="slides home">
+        <Home scrollSection={handleScroll}></Home>
+      </section>
+      <section id="about" className="slides about">
         <About></About>
-      </div>
-      <div className="slides projects">
+      </section>
+      <section id="projects" className="slides projects">
         <Projects></Projects>
-      </div>
-      <div className="slides studies">
+      </section>
+      <section id="studies" className="slides studies">
         <Studies></Studies>
-      </div>
-      <div className="slides experience">
+      </section>
+      <section id="experience" className="slides experience">
         <Experience></Experience>
-      </div>
+      </section>
     </div>
   );
 };

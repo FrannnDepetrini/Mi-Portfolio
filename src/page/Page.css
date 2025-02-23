@@ -1,5 +1,9 @@
 @import url("../utils/colors/colors.css");
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
