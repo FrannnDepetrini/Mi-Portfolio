@@ -24,6 +24,7 @@
 
 .h1_container {
   width: 400px;
+  margin-right: 50px;
 }
 
 .h1_container h1 {
@@ -94,12 +95,12 @@ span {
 .theme_container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
   margin-bottom: 100px;
   background-color: var(--lightBlue);
   padding: 12px;
   border-radius: 10px;
-  width: 80px;
+  width: 85px;
 }
 
 .theme_container button {

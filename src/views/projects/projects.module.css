@@ -1,0 +1,73 @@
+@import url("../../utils/fonts/index.css");
+@import url("../../utils/colors/colors.css");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.projects_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  margin-top: 30px;
+}
+
+.h1_container {
+  margin-top: 20px;
+  margin-left: 60px;
+}
+
+.h1_container h1 {
+  font-family: var(--archblack);
+  color: white;
+  font-size: 40px;
+}
+
+.list_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 100px;
+}
+
+.project_card {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  border-radius: 10px;
+}
+.box {
+  margin-right: 15px;
+  background-color: var(--lightBlue);
+  width: 180px;
+  height: 160px;
+  border-radius: 10px;
+}
+.image {
+}
+
+.dreamair {
+  background-image: url("../../utils/images/DreamAir.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 180px;
+  height: 160px;
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.project_title {
+  margin-top: 30px;
+  font-family: "inter";
+  font-weight: 700;
+  color: white;
+}

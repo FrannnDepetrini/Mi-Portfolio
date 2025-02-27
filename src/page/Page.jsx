@@ -1,6 +1,6 @@
 import { Home, About, Experience, Projects, Studies } from "../views/index";
 
-import "./Page.css";
+import styles from "./Page.module.css";
 
 const handleScroll = (sectionId) => {
   const section = document.getElementById(sectionId);
@@ -13,20 +13,20 @@ const handleScroll = (sectionId) => {
 
 const Page = () => {
   return (
-    <div className="page_container">
-      <section id="home" className="slides home">
+    <div className={styles.page_container}>
+      <section id="home" className={styles.slides}>
         <Home scrollSection={handleScroll}></Home>
       </section>
-      <section id="about" className="slides about">
+      <section id="about" className={styles.slides}>
         <About></About>
       </section>
-      <section id="projects" className="slides projects">
+      <section id="projects" className={styles.slides}>
         <Projects></Projects>
       </section>
-      <section id="studies" className="slides studies">
+      <section id="studies" className={styles.slides}>
         <Studies></Studies>
       </section>
-      <section id="experience" className="slides experience">
+      <section id="experience" className={styles.slides}>
         <Experience></Experience>
       </section>
     </div>

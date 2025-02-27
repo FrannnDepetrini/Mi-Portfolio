@@ -1,7 +1,7 @@
 import { ReactTyped } from "react-typed";
 import { IoMoonOutline } from "../../utils/icons";
 import { useState } from "react";
-import "./Home.css";
+import styles from "./Home.module.css";
 
 const Home = ({ scrollSection }) => {
   const [activeIndex, setActiveIndex] = useState("home");
@@ -36,54 +36,62 @@ const Home = ({ scrollSection }) => {
   };
 
   return (
-    <div className="home_container">
-      <div className="nav_container">
-        <div className="logo_container">
-          <div className="icon"></div>
+    <div className={styles.home_container}>
+      <div className={styles.nav_container}>
+        <div className={styles.nav_container}>
+          <div className={styles.icon}></div>
         </div>
-        <div className="menu_container">
+        <div className={styles.menu_container}>
           <div
             onClick={() => onScroll("home")}
-            className={activeIndex == "home" ? "home_focus" : "home"}
+            className={activeIndex == "home" ? styles.home_focus : styles.home}
           >
             Inicio
           </div>
           <div
             onClick={() => onScroll("about")}
-            className={activeIndex == "about" ? "about_focus" : "about"}
+            className={
+              activeIndex == "about" ? styles.about_focus : styles.about
+            }
           >
             Sobre mi
           </div>
           <div
             onClick={() => onScroll("projects")}
             className={
-              activeIndex == "projects" ? "projects_focus" : "projects"
+              activeIndex == "projects"
+                ? styles.projects_focus
+                : styles.projects
             }
           >
             Proyectos
           </div>
           <div
             onClick={() => onScroll("studies")}
-            className={activeIndex == "studies" ? "studies_focus" : "studies"}
+            className={
+              activeIndex == "studies" ? styles.studies_focus : styles.studies
+            }
           >
             Estudios
           </div>
           <div
             onClick={() => onScroll("experience")}
             className={
-              activeIndex == "experience" ? "experience_focus" : "experience"
+              activeIndex == "experience"
+                ? styles.experience_focus
+                : styles.experience
             }
           >
             Experiencia
           </div>
         </div>
-        <div className="theme_container">
+        <div className={styles.theme_container}>
           <button onClick={handleLanguage}>{language}</button>
           <IoMoonOutline />
         </div>
       </div>
-      <div className="main_container">
-        <div className="h1_container">
+      <div className={styles.main_container}>
+        <div className={styles.h1_container}>
           <h1>
             Hola, soy <br />
             <ReactTyped
@@ -91,7 +99,6 @@ const Home = ({ scrollSection }) => {
               showCursor={false}
               strings={["Francisco"]}
             />
-            {/* <span>Francisco</span> */}
             <br />
             <span>
               <ReactTyped
@@ -104,14 +111,14 @@ const Home = ({ scrollSection }) => {
             <br />y este es <br /> mi <br /> portfolio
           </h1>
         </div>
-        <div className="image_container">
+        <div className={styles.image_container}>
           <div
             onClick={showImgInf}
-            className={`image ${movedImg ? "moved" : ""}`}
+            className={`${styles.image} ${movedImg ? styles.moved : ""}`}
           ></div>
         </div>
       </div>
-      <h1 className={`imgInf ${visibleImgInf ? "visible" : ""}`}>
+      <h1 className={`${styles.imgInf} ${visibleImgInf ? styles.visible : ""}`}>
         &quot; Modelo low-poly de mi habitacion <br />
         hecho en 3d por mi &quot;
       </h1>

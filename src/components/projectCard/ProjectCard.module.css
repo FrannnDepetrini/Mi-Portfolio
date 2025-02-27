@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.project_card {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  border-radius: 10px;
+}
+.box {
+  margin-right: 15px;
+  background-color: var(--lightBlue);
+  width: 180px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.image {
+  width: 180px;
+  height: 160px;
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.project_title {
+  margin-top: 30px;
+  font-family: "inter";
+  font-weight: 700;
+  color: white;
+}
