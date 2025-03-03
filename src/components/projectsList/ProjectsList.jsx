@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "../projectCard/ProjectCard";
-import styles from "./ProjectsList.Module.css";
+import styles from "./ProjectsList.module.css";
 
 const cardData = [
   {
