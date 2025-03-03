@@ -86,11 +86,6 @@ const Studies = () => {
             }}
           >
             <div className={styles.elements_container}>
-              <img
-                className={styles.timeline_img}
-                src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740988772/Titulo_Arg.Programa_bzu8ez.png"
-              ></img>
-
               <h1 className={styles.timeline_h1}>
                 Tecnicatura en programacion
               </h1>
