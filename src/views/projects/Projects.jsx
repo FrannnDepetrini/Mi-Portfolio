@@ -1,4 +1,4 @@
-import ProjectCard from "../../components/projectCard/ProjectCard";
+import ProjectsList from "../../components/projectsList/ProjectsList";
 import styles from "./projects.module.css";
 
 const Projects = () => {
@@ -10,9 +10,7 @@ const Projects = () => {
         </h1>
       </div>
       <div className={styles.list_container}>
-        <ProjectCard name="DreamAir"></ProjectCard>
-        <ProjectCard name="DreamAirAPI"></ProjectCard>
-        <ProjectCard name="Truco.Py"></ProjectCard>
+        <ProjectsList></ProjectsList>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import { Home, About, Experience, Projects, Studies } from "../views/index";
+import Contact from "../views/contact/contact";
+import { Home, About, Projects, Studies } from "../views/index";
 
 import styles from "./Page.module.css";
 
@@ -27,7 +28,7 @@ const Page = () => {
         <Studies></Studies>
       </section>
       <section id="experience" className={styles.slides}>
-        <Experience></Experience>
+        <Contact></Contact>
       </section>
     </div>
   );

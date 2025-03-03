@@ -82,7 +82,7 @@ const Home = ({ scrollSection }) => {
                 : styles.experience
             }
           >
-            Experiencia
+            Contacto
           </div>
         </div>
         <div className={styles.theme_container}>
