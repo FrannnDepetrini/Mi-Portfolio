@@ -18,6 +18,7 @@ const Studies = () => {
       <div className={styles.timeLine_container}>
         <VerticalTimeline lineColor="#518267" className={styles.timeLine}>
           <VerticalTimelineElement
+            iconClassName={styles.icon}
             iconStyle={{
               background: "#518267",
               transform: "scale(0.25,0.25)",
@@ -46,6 +47,7 @@ const Studies = () => {
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
+            iconClassName={styles.icon}
             iconStyle={{
               background: "#518267",
               transform: "scale(0.25,0.25)",
@@ -70,6 +72,7 @@ const Studies = () => {
             <h3 className={styles.timeline_h3}>(2023)</h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
+            iconClassName={styles.icon}
             iconStyle={{
               background: "#518267",
               transform: "scale(0.25,0.25)",
