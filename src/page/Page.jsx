@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./Page.module.css";
 import { useEffect, useState } from "react";
 
-const amountImages = 1;
+const amountImages = 4;
 
 const Page = () => {
   const [loadedImages, setLoadedImages] = useState(0);

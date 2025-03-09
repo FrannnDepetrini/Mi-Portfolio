@@ -1,4 +1,5 @@
 import styles from "./Studies.module.css";
+import { useEffect, useState } from "react";
 
 import {
   VerticalTimeline,
@@ -7,7 +8,34 @@ import {
 
 import "react-vertical-timeline-component/style.min.css";
 
-const Studies = () => {
+const Studies = ({ onLoadImages }) => {
+  const [loadedImages, setLoadedImages] = useState(0);
+
+  const studiesImgs = [
+    "https://res.cloudinary.com/ded9gllk0/image/upload/v1740988772/Titulo_Arg.Programa_bzu8ez.png",
+    "https://res.cloudinary.com/ded9gllk0/image/upload/v1740988776/Titulo_Coder_House_sgrlle.png",
+  ];
+
+  const amountImgs = studiesImgs.length;
+
+  useEffect(() => {
+    console.log("hola 3");
+    studiesImgs.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        console.log("hola 4");
+        setLoadedImages((prev) => prev + 1);
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    if (amountImgs === loadedImages) {
+      console.log("hola 2");
+      onLoadImages();
+    }
+  }, [loadedImages]);
   return (
     <div className={styles.studies_container}>
       <div className={styles.h1_container}>
@@ -35,10 +63,7 @@ const Studies = () => {
             }}
           >
             <div className={styles.elements_container}>
-              <img
-                className={styles.timeline_img}
-                src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740988772/Titulo_Arg.Programa_bzu8ez.png"
-              ></img>
+              <img className={styles.timeline_img} src={studiesImgs[0]}></img>
 
               <h1 className={styles.timeline_h1}>
                 Primeros pasos de <br /> desarrollo frontend
@@ -63,10 +88,7 @@ const Studies = () => {
               borderRadius: "10px",
             }}
           >
-            <img
-              className={styles.timeline_img}
-              src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740988776/Titulo_Coder_House_sgrlle.png"
-            ></img>
+            <img className={styles.timeline_img} src={studiesImgs[1]}></img>
 
             <h1 className={styles.timeline_h1}>Desarrollo de aplicaciones</h1>
             <h3 className={styles.timeline_h3}>(2023)</h3>

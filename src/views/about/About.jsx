@@ -1,6 +1,6 @@
 import styles from "./about.module.css";
 
-const About = () => {
+const About = ({ onLoadImages }) => {
   return (
     <div className={styles.about_container}>
       <div className={styles.h1_container}>

@@ -1,5 +1,5 @@
 import { ReactTyped } from "react-typed";
-import { IoMoonOutline } from "../../utils/icons";
+import { FiSun, IoMoonOutline } from "../../utils/icons";
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 
@@ -9,6 +9,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
   const [movedImg, setMovedImg] = useState(false);
   const [language, setLanguage] = useState("Es");
   const [loadedImages, setLoadedImages] = useState(0);
+  const [theme, setTheme] = useState("dark");
   const onScroll = (scrollId) => {
     setActiveIndex(scrollId);
     scrollSection(scrollId);
@@ -19,6 +20,14 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
       setLanguage("En");
     } else {
       setLanguage("Es");
+    }
+  };
+
+  const handleTheme = () => {
+    if (theme == "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
     }
   };
 
@@ -115,7 +124,9 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
         </div>
         <div className={styles.theme_container}>
           <button onClick={handleLanguage}>{language}</button>
-          <IoMoonOutline />
+          <div onClick={handleTheme}>
+            {theme == "dark" ? <IoMoonOutline /> : <FiSun />}
+          </div>
         </div>
       </div>
       <div className={styles.main_container}>

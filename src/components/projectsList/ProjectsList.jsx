@@ -3,28 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "../projectCard/ProjectCard";
 import styles from "./ProjectsList.module.css";
 
-const cardData = [
-  {
-    id: 1,
-    title: "DreamAir",
-    image:
-      "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783289/DreamAir_zycyyt.png",
-  },
-  {
-    id: 2,
-    title: "DreamAirAPI",
-    image:
-      "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/DreamAirAPI_ww3jnn.png",
-  },
-  {
-    id: 3,
-    title: "Truco.py",
-    image:
-      "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783291/Trucopy_raboyr.png",
-  },
-];
-
-const ProjectsList = () => {
+const ProjectsList = ({ cardData }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
