@@ -1,13 +1,14 @@
 import { ReactTyped } from "react-typed";
 import { IoMoonOutline } from "../../utils/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 
-const Home = ({ scrollSection }) => {
+const Home = ({ scrollSection, onLoadImages, loading }) => {
   const [activeIndex, setActiveIndex] = useState("home");
   const [visibleImgInf, setVisibleImgInf] = useState(false);
   const [movedImg, setMovedImg] = useState(false);
   const [language, setLanguage] = useState("Es");
+  const [loadedImages, setLoadedImages] = useState(0);
   const onScroll = (scrollId) => {
     setActiveIndex(scrollId);
     scrollSection(scrollId);
@@ -34,12 +35,39 @@ const Home = ({ scrollSection }) => {
       }, 400);
     }
   };
+  const imgUrls = [
+    "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/LogoDpx_f5zw6b.png",
+    "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783294/casaLowPoly_j6v8rb.png",
+  ];
+  const amountImgs = imgUrls.length;
+
+  useEffect(() => {
+    console.log("hola 3");
+    imgUrls.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        console.log("hola 4");
+        setLoadedImages((prev) => prev + 1);
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    if (amountImgs === loadedImages) {
+      console.log("hola 2");
+      onLoadImages();
+    }
+  }, [loadedImages]);
 
   return (
     <div className={styles.home_container}>
       <div className={styles.nav_container}>
         <div className={styles.nav_container}>
-          <div className={styles.icon}></div>
+          <img
+            src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/LogoDpx_f5zw6b.png"
+            className={styles.icon}
+          ></img>
         </div>
         <div className={styles.menu_container}>
           <div
@@ -94,28 +122,34 @@ const Home = ({ scrollSection }) => {
         <div className={styles.h1_container}>
           <h1>
             Hola, soy <br />
-            <ReactTyped
-              typeSpeed={60}
-              showCursor={false}
-              strings={["Francisco"]}
-            />
-            <br />
-            <span>
+            {!loading && (
               <ReactTyped
+                startDelay={800}
                 typeSpeed={60}
                 showCursor={false}
-                startDelay={700}
-                strings={["Depetrini"]}
+                strings={["Francisco"]}
               />
+            )}
+            <br />
+            <span>
+              {!loading && (
+                <ReactTyped
+                  startDelay={1600}
+                  typeSpeed={60}
+                  showCursor={false}
+                  strings={["Depetrini"]}
+                />
+              )}
             </span>
             <br />y este es <br /> mi <br /> portfolio
           </h1>
         </div>
         <div className={styles.image_container}>
-          <div
+          <img
+            src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740783294/casaLowPoly_j6v8rb.png"
             onClick={showImgInf}
             className={`${styles.image} ${movedImg ? styles.moved : ""}`}
-          ></div>
+          ></img>
         </div>
       </div>
       <h1 className={`${styles.imgInf} ${visibleImgInf ? styles.visible : ""}`}>
