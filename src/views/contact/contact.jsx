@@ -2,11 +2,11 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 import styles from "./contact.module.css";
-import { useScroll } from "framer-motion";
+import UseTranslation from "../../customHooks/useTranslation/useTranslation";
 
 const Contact = ({ onLoadImages }) => {
   const [loadedImages, setLoadedImages] = useState(0);
-
+  const translate = UseTranslation();
   const form = useRef();
 
   const onSend = (e) => {
@@ -58,7 +58,7 @@ const Contact = ({ onLoadImages }) => {
       <div className={styles.contact_container}>
         <div className={styles.h1_container}>
           <h1>
-            Contactame <span>!</span>
+            {translate("contactMe")} <span>!</span>
           </h1>
         </div>
 
@@ -66,7 +66,7 @@ const Contact = ({ onLoadImages }) => {
           <form ref={form} className={styles.form_container}>
             <div className={styles.input_container}>
               <div className={styles.nameEmail_container}>
-                <label>Nombre</label>
+                <label>{translate("name")}</label>
                 <input
                   placeholder="Francisco"
                   type="text"
@@ -80,7 +80,7 @@ const Contact = ({ onLoadImages }) => {
                 ></input>
               </div>
               <div className={styles.message_container}>
-                <label>Mensaje</label>
+                <label>{translate("message")}</label>
                 <textarea
                   maxLength="230"
                   placeholder="Mensaje"
@@ -91,13 +91,13 @@ const Contact = ({ onLoadImages }) => {
             </div>
             <div className={styles.button_container}>
               <button type="submit" onClick={onSend}>
-                Enviar
+                {translate("send")}
               </button>
             </div>
           </form>
           <div className={styles.extrainfo_container}>
             <h3>
-              Tambien puedes encontrarme en <span>:</span>
+              {translate("alsoFind")} <span>:</span>
             </h3>
             <div className={styles.media_container}>
               <a href="https://www.instagram.com/depeex/">

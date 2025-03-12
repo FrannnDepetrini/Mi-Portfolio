@@ -41,27 +41,25 @@ const ProjectsList = ({ cardData }) => {
                       alt={card.title}
                       layoutId={`card-image-${card.id}`}
                     />
+                    {/* <motion.h1 layoutId={`card-title-${card.id}`}>
+                      {card.title}
+                    </motion.h1> */}
+
                     <motion.h1 layoutId={`card-title-${card.id}`}>
                       {card.title}
                     </motion.h1>
-                    <motion.p layoutId={`card-content-${card.id}`}>
-                      {card.content}
-                    </motion.p>
+
                     <div className={styles.expanded_text}>
-                      DreamAir es el front-end de un sistema de gestion de
-                      compra y venta de vuelos. <br /> Deja atrás el concepto de
-                      paginas cuyo fin es buscar muchas opciones y re-dirigir al
-                      usuario.
-                      <br /> En esta pagina hay una relacion directa entre
-                      cliente-aerolinea.
+                      {card.extraInfo1} <br /> {card.extraInfo2}
+                      <br /> {card.extraInfo3}
                     </div>
                     <div className={styles.expanded_foot}>
-                      Este proyecto fue realizado con Joaquin Tanlongo y Maximo
-                      Martin en {"  "}
-                      <span className={styles.spanCard}>ReactJS</span>
+                      {card.contributors1} {"  "}
+                      <span className={styles.spanCard}>{card.lang}</span>
                       {"  "}
-                      a modo de proyecto final en una de las materias de la
-                      carrera. <br />( 2024 )
+                      {card.contributors2a}
+                      <br />
+                      {card.date}
                     </div>
                   </>
                 );

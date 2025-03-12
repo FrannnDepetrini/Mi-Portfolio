@@ -2,12 +2,19 @@ import { ReactTyped } from "react-typed";
 import { FiSun, IoMoonOutline } from "../../utils/icons";
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
+import UseTranslation from "../../customHooks/useTranslation/useTranslation";
 
-const Home = ({ scrollSection, onLoadImages, loading }) => {
+const Home = ({
+  scrollSection,
+  onLoadImages,
+  loading,
+  language,
+  handleChangeLang,
+}) => {
   const [activeIndex, setActiveIndex] = useState("home");
   const [visibleImgInf, setVisibleImgInf] = useState(false);
   const [movedImg, setMovedImg] = useState(false);
-  const [language, setLanguage] = useState("Es");
+
   const [loadedImages, setLoadedImages] = useState(0);
   const [theme, setTheme] = useState("dark");
   const onScroll = (scrollId) => {
@@ -15,13 +22,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
     scrollSection(scrollId);
   };
 
-  const handleLanguage = () => {
-    if (language == "Es") {
-      setLanguage("En");
-    } else {
-      setLanguage("Es");
-    }
-  };
+  const translate = UseTranslation();
 
   const handleTheme = () => {
     if (theme == "dark") {
@@ -83,7 +84,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
             onClick={() => onScroll("home")}
             className={activeIndex == "home" ? styles.home_focus : styles.home}
           >
-            Inicio
+            {translate("nav_home")}
           </div>
           <div
             onClick={() => onScroll("about")}
@@ -91,7 +92,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
               activeIndex == "about" ? styles.about_focus : styles.about
             }
           >
-            Sobre mi
+            {translate("nav_about")}
           </div>
           <div
             onClick={() => onScroll("projects")}
@@ -101,7 +102,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
                 : styles.projects
             }
           >
-            Proyectos
+            {translate("projects")}
           </div>
           <div
             onClick={() => onScroll("studies")}
@@ -109,7 +110,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
               activeIndex == "studies" ? styles.studies_focus : styles.studies
             }
           >
-            Estudios
+            {translate("studies")}
           </div>
           <div
             onClick={() => onScroll("experience")}
@@ -119,11 +120,11 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
                 : styles.experience
             }
           >
-            Contacto
+            {translate("nav_contact")}
           </div>
         </div>
         <div className={styles.theme_container}>
-          <button onClick={handleLanguage}>{language}</button>
+          <button onClick={handleChangeLang}>{language}</button>
           <div onClick={handleTheme}>
             {theme == "dark" ? <IoMoonOutline /> : <FiSun />}
           </div>
@@ -132,7 +133,7 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
       <div className={styles.main_container}>
         <div className={styles.h1_container}>
           <h1>
-            Hola, soy <br />
+            {translate("welcome_first")} <br />
             {!loading && (
               <ReactTyped
                 startDelay={800}
@@ -152,7 +153,9 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
                 />
               )}
             </span>
-            <br />y este es <br /> mi <br /> portfolio
+            <br />
+            {translate("welcome_second")} <br /> {translate("my")} <br />{" "}
+            portfolio
           </h1>
         </div>
         <div className={styles.image_container}>
@@ -164,8 +167,8 @@ const Home = ({ scrollSection, onLoadImages, loading }) => {
         </div>
       </div>
       <h1 className={`${styles.imgInf} ${visibleImgInf ? styles.visible : ""}`}>
-        &quot; Modelo low-poly de mi habitacion <br />
-        hecho en 3d por mi &quot;
+        &quot; {translate("3dmodel_first")} <br />
+        {translate("3dmodel_second")} &quot;
       </h1>
     </div>
   );

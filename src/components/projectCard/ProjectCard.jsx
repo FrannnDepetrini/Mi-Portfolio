@@ -16,7 +16,6 @@ const Card = ({ card, onClick }) => {
       />
 
       <motion.h3 layoutId={`card-title-${card.id}`}>{card.title}</motion.h3>
-      <motion.p layoutId={`card-content-${card.id}`}>{card.content}</motion.p>
     </motion.div>
   );
 };

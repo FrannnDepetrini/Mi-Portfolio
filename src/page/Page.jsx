@@ -2,11 +2,14 @@ import Contact from "../views/contact/contact";
 import { Home, About, Projects, Studies } from "../views/index";
 import classNames from "classnames";
 import styles from "./Page.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LangContext } from "../services/langContext/langContext";
 
 const amountImages = 4;
 
 const Page = () => {
+  const { language, handleChangeLang } = useContext(LangContext);
+
   const [loadedImages, setLoadedImages] = useState(0);
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);
@@ -49,6 +52,8 @@ const Page = () => {
       <div className={styles.page_container}>
         <section id="home" className={styles.slides}>
           <Home
+            language={language}
+            handleChangeLang={handleChangeLang}
             loading={loading}
             onLoadImages={handleImageLoaded}
             scrollSection={handleScroll}
@@ -58,7 +63,10 @@ const Page = () => {
           <About onLoadImages={handleImageLoaded}></About>
         </section>
         <section id="projects" className={styles.slides}>
-          <Projects onLoadImages={handleImageLoaded}></Projects>
+          <Projects
+            language={language}
+            onLoadImages={handleImageLoaded}
+          ></Projects>
         </section>
         <section id="studies" className={styles.slides}>
           <Studies onLoadImages={handleImageLoaded}></Studies>

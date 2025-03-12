@@ -1,9 +1,12 @@
 import "./App.css";
 import Page from "./page/Page";
+import { LangContextProvider } from "./services/langContext/langContext";
 function App() {
   return (
     <>
-      <Page></Page>
+      <LangContextProvider>
+        <Page></Page>
+      </LangContextProvider>
     </>
   );
 }
