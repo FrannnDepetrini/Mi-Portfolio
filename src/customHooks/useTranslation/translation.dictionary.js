@@ -113,7 +113,7 @@ export const dict_translations = {
     },
     {
       key: "p2_first",
-      value: "I'm 20 years old teenager which is studying the ",
+      value: "I'm 20 years old teenager who is studying the ",
     },
     { key: "p2_second", value: "“Programming Technician” career" },
     {

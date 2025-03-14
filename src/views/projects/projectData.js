@@ -62,7 +62,7 @@ export const projectData = {
       extraInfo3:
         "In this page there is a direct relation between user-airline.",
       contributors1:
-        " This Project was made by Joaquin Tanlongo, Maximo Martin and me at",
+        " This system was made by Joaquin Tanlongo, Maximo Martin and me at",
       lang: "ReactJS",
       contributors2:
         " as a final project in one of the subjects of the degree.",
@@ -79,7 +79,7 @@ export const projectData = {
         "This software is the responsible of the comunication between the database and the front-end.",
       extraInfo3: "This is a Rest Api.",
       contributors1:
-        " This Project was made by Joaquin Tanlongo, Maximo Martin and me at",
+        " This system was made by Joaquin Tanlongo, Maximo Martin and me at",
       lang: ".Net",
       contributors2:
         " as a final project in one of the subjects of the degree.",
@@ -92,7 +92,7 @@ export const projectData = {
         "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783291/Trucopy_raboyr.png",
       extraInfo1:
         "Truco.py is, as the name says, the famous argentinian game with cards called Truco.",
-      contributors1: " This Project was made by Joaquin Tanlongo and me at",
+      contributors1: " This system was made by Joaquin Tanlongo and me at",
       lang: "Python",
       contributors2:
         " as a final project in one of the subjects of the degree.",

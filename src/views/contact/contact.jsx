@@ -3,27 +3,51 @@ import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 import styles from "./contact.module.css";
 import UseTranslation from "../../customHooks/useTranslation/useTranslation";
+import Modal from "../../components/modal/modal";
+import { useValidateInput } from "../../customHooks/useValidateInput/useValidateInput";
 
 const Contact = ({ onLoadImages }) => {
   const [loadedImages, setLoadedImages] = useState(0);
+  const [resultEmailjs, setResultEmailjs] = useState("");
+  const [messageEmailjs, setMessageEmailjs] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const [validateName, errorsName] = useValidateInput("Name");
+  const [validateEmail, errorsEmail] = useValidateInput("Email", "email");
+  const [validateMsg, errorsMsg] = useValidateInput("Message");
+
   const translate = UseTranslation();
   const form = useRef();
 
   const onSend = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("service_ep6xaiz", "template_ge5sa3a", form.current, {
-        publicKey: "9m6VB9eZTPy1xpgLI",
-      })
-      .then(
-        () => {
-          alert("SUCCESS!");
-        },
-        (error) => {
-          alert("FAILED...", error.text);
-        }
-      );
+    if (errorsName.msg != "") {
+      alert(errorsName.msg);
+    } else if (errorsEmail.msg != "") {
+      alert(errorsEmail.msg);
+    } else if (errorsMsg.msg != "") {
+      alert(errorsMsg.msg);
+    } else {
+      emailjs
+        .sendForm("service_ep6xaiz", "template_ge5sa3a", form.current, {
+          publicKey: "9m6VB9eZTPy1xpgLI",
+        })
+        .then(
+          () => {
+            setResultEmailjs("success");
+            setMessageEmailjs("Enviado con exito");
+          },
+          (error) => {
+            setResultEmailjs("error");
+            setMessageEmailjs("Error: " + error.msg);
+          }
+        );
+      setModalVisible(true);
+      setTimeout(() => {
+        setModalVisible(false);
+      }, 2500);
+    }
   };
 
   const mediaImgs = [
@@ -68,12 +92,14 @@ const Contact = ({ onLoadImages }) => {
               <div className={styles.nameEmail_container}>
                 <label>{translate("name")}</label>
                 <input
+                  onChange={(e) => validateName(e.target.value)}
                   placeholder="Francisco"
                   type="text"
                   name="from_name"
                 ></input>
                 <label>Email</label>
                 <input
+                  onChange={(e) => validateEmail(e.target.value)}
                   placeholder="fran@example.com"
                   type="email"
                   name="user_email"
@@ -82,6 +108,7 @@ const Contact = ({ onLoadImages }) => {
               <div className={styles.message_container}>
                 <label>{translate("message")}</label>
                 <textarea
+                  onChange={(e) => validateMsg(e.target.value)}
                   maxLength="230"
                   placeholder="Mensaje"
                   type="text"
@@ -113,6 +140,11 @@ const Contact = ({ onLoadImages }) => {
           </div>
         </div>
       </div>
+      <Modal
+        modalVisible={modalVisible}
+        type={resultEmailjs}
+        message={messageEmailjs}
+      ></Modal>
     </>
   );
 };
