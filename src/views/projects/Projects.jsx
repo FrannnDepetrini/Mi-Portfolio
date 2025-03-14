@@ -10,12 +10,10 @@ const Projects = ({ onLoadImages, language }) => {
   const amountImgs = projectData[language].length;
   const translate = UseTranslation();
   useEffect(() => {
-    console.log("hola 3");
     projectData[language].forEach((pr) => {
       const img = new Image();
       img.src = pr.image;
       img.onload = () => {
-        console.log("hola 4");
         setLoadedImages((prev) => prev + 1);
       };
     });
@@ -23,7 +21,6 @@ const Projects = ({ onLoadImages, language }) => {
 
   useEffect(() => {
     if (amountImgs === loadedImages) {
-      console.log("hola 2");
       onLoadImages();
     }
   }, [loadedImages]);

@@ -20,12 +20,10 @@ const Studies = ({ onLoadImages }) => {
   const amountImgs = studiesImgs.length;
 
   useEffect(() => {
-    console.log("hola 3");
     studiesImgs.forEach((src) => {
       const img = new Image();
       img.src = src;
       img.onload = () => {
-        console.log("hola 4");
         setLoadedImages((prev) => prev + 1);
       };
     });
@@ -33,7 +31,6 @@ const Studies = ({ onLoadImages }) => {
 
   useEffect(() => {
     if (amountImgs === loadedImages) {
-      console.log("hola 2");
       onLoadImages();
     }
   }, [loadedImages]);

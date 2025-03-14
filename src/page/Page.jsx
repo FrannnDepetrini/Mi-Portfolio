@@ -24,7 +24,6 @@ const Page = () => {
   };
 
   const handleImageLoaded = () => {
-    console.log("hola 1");
     setLoadedImages((prev) => prev + 1);
   };
 

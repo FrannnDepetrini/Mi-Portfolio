@@ -52,12 +52,10 @@ const Home = ({
   const amountImgs = imgUrls.length;
 
   useEffect(() => {
-    console.log("hola 3");
     imgUrls.forEach((src) => {
       const img = new Image();
       img.src = src;
       img.onload = () => {
-        console.log("hola 4");
         setLoadedImages((prev) => prev + 1);
       };
     });
@@ -65,7 +63,6 @@ const Home = ({
 
   useEffect(() => {
     if (amountImgs === loadedImages) {
-      console.log("hola 2");
       onLoadImages();
     }
   }, [loadedImages]);

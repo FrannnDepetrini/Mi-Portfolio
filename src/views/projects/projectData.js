@@ -4,7 +4,7 @@ export const projectData = {
       id: 1,
       title: "DreamAir",
       image:
-        "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783289/DreamAir_zycyyt.png",
+        "https://res.cloudinary.com/ded9gllk0/image/upload/v1741979929/CapDreamAir_k7vazd.png",
       extraInfo1:
         "DreamAir es el front-end de un sistema de gestion de compra y venta de vuelos.",
       extraInfo2:
@@ -22,7 +22,7 @@ export const projectData = {
       id: 2,
       title: "DreamAirAPI",
       image:
-        "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/DreamAirAPI_ww3jnn.png",
+        "https://res.cloudinary.com/ded9gllk0/image/upload/v1741979929/Cap_Api_d6y4vx.png",
       extraInfo1:
         "DreamAir Api es, como dice el nombre, la api que consume el front-end DreamAir.",
       extraInfo2:
@@ -55,7 +55,7 @@ export const projectData = {
       id: 1,
       title: "DreamAir",
       image:
-        "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783289/DreamAir_zycyyt.png",
+        "https://res.cloudinary.com/ded9gllk0/image/upload/v1741979929/CapDreamAir_k7vazd.png",
       extraInfo1: "DreamAir is the front-end of a flights management system",
       extraInfo2:
         "It leave behind the idea of pages whose aim is to search for many options and redirect the user.",
@@ -72,7 +72,7 @@ export const projectData = {
       id: 2,
       title: "DreamAirAPI",
       image:
-        "https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/DreamAirAPI_ww3jnn.png",
+        "https://res.cloudinary.com/ded9gllk0/image/upload/v1741979929/Cap_Api_d6y4vx.png",
       extraInfo1:
         "DreamAir Api is, as the name says, the api that DreamAir consumes.",
       extraInfo2:

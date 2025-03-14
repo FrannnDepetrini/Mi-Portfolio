@@ -1,29 +1,128 @@
+.overlay {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.51);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  visibility: hidden; /* Ocultar por defecto */
+  opacity: 0; /* Invisible por defecto */
+  pointer-events: none; /* No interactuar cuando no está visible */
+}
+
+.overlay.visible {
+  visibility: visible; /* Mostrar cuando el modal está expandido */
+  opacity: 1; /* Hacer visible el overlay */
+  pointer-events: all; /* Permitir interacciones */
+}
+.cards_container {
+  position: relative;
+  width: fit-content;
+}
+
 .card {
   background: var(--darkGreen);
   border-radius: 8px;
-  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.697);
+  box-shadow: 5px 6px 10px rgb(0, 0, 0);
   width: 250px;
   height: 280px;
   cursor: pointer;
   overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardInvisible {
+  opacity: 0;
+}
+
+.cardh3 {
+  font-size: 20px;
   color: white;
   font-family: "inter";
   font-weight: 700;
   text-align: center;
-  transition: background-color 0.2s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 .card:hover {
   background-color: #1e2822;
 }
 
-.card img {
-  border: 4px solid var(--lightBlue);
-
-  width: 90%;
+.cardImg {
+  max-height: 60%;
   margin-top: 30px;
   border-radius: 10px;
-  height: 60%;
+  width: 80%;
   object-fit: cover;
+  object-position: top;
   margin-bottom: 15px;
+}
+
+/* .h3Expanded {
+  transition: all 0.3s ease-in-out;
+  font-size: 30px;
+} */
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  padding-bottom: 20px;
+  width: 90%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--lightBlue);
+  font-family: "inter";
+  font-weight: 700;
+  border-bottom: 1px solid white;
+  font-style: italic;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.expanded_text {
+  opacity: 1;
+}
+
+.foot {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  color: rgb(153, 153, 153);
+  font-family: "inter";
+  font-weight: 700;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.expanded_foot {
+  opacity: 1;
+}
+
+.spanCard {
+  font-size: 15px;
+  color: white;
+}
+
+.modalCard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalCard::-webkit-scrollbar-thumb {
+  background-color: #0a0f0b;
+  border-radius: 4px;
 }
