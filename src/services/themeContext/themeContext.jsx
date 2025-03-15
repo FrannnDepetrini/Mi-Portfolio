@@ -7,7 +7,7 @@ export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialValue);
 
   useEffect(() => {
-    localStorage.setItem("theme", initialValue);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const handleChangeTheme = () => {
