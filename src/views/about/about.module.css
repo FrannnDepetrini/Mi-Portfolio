@@ -23,8 +23,13 @@
 
 .h1_container h1 {
   font-family: var(--archblack);
-  color: white;
+  color: var(--mediumGreen);
   font-size: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.h1_container.h1C_dark h1 {
+  color: white;
 }
 
 .info_container {
@@ -34,32 +39,61 @@
 }
 
 .text_container {
-  border: 1px solid var(--lightBlue);
+  border: 1px solid var(--mediumGreen);
   width: 900px;
   border-radius: 10px;
   padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.textC_dark {
+  border: 1px solid var(--lightBlue);
 }
 
 .text_container p {
-  color: white;
+  color: var(--mediumGreen);
   font-family: "inter";
   font-weight: 400;
   padding: 15px;
   font-size: 20px;
   line-height: 1.4;
+  transition: all 0.3s ease-in-out;
+}
+
+.text_container.textC_dark p {
+  color: white;
 }
 
 .image_container {
   width: 250px;
   height: 250px;
-  background-color: var(--lightBlue);
+  background-color: var(--mediumGreen);
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.imgCont_dark {
+  background-color: var(--lightBlue);
 }
 
 .span_underlined {
   color: white;
   font-size: 21px;
   font-weight: 600;
-  border-bottom: 1px solid var(--lightBlue);
+  border-bottom: 1px solid var(--mediumGreen);
   padding-bottom: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.spanU_dark {
+  border-bottom: 1px solid var(--lightBlue);
+}
+
+.spanGeneric {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.spanG_dark {
+  color: var(--lightBlue);
 }

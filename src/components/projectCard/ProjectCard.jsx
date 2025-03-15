@@ -1,40 +1,38 @@
 import classnames from "classnames";
 import prueba from "./ProjectCard.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { SectionContext } from "../../services/sectionContext/sectionContext";
 
-const Card = ({ card }) => {
+const Card = ({ card, theme }) => {
   const [modalExpanded, setModalExpanded] = useState(false);
+  const [isAlreadyCalc, setIsAlreadyCalc] = useState(false);
   const [isAlreadyExpanded, setIsAlreadyExpanded] = useState(false);
-  const [position, setPosition] = useState({ top: "0px", left: "0px" }); // Inicialización segura
+  const [position, setPosition] = useState({});
   const [animInvisible, setAnimInvisible] = useState(false);
-
+  const { section, prInView } = useContext(SectionContext);
   const cardRef = useRef();
 
+  const calculatePosition = () => {
+    if (cardRef.current && !isAlreadyCalc) {
+      console.log("me calcule otra vez");
+      const rect = cardRef.current.getBoundingClientRect();
+      setPosition({
+        top: `${rect.top}px`,
+        left: `${rect.left}px`,
+      });
+      console.log(`${rect.top}px`);
+      console.log(`${rect.left}px`);
+      setIsAlreadyCalc(true);
+    }
+  };
+
   useEffect(() => {
-    const calculatePosition = () => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        setPosition({
-          top: `${rect.top}px`,
-          left: `${rect.left}px`,
-        });
-      }
-    };
+    if (section == "projects" && prInView) {
+      console.log("me voy a calcular");
 
-    // Ejecutar una vez que el componente se haya montado
-    calculatePosition();
-
-    // Agregar event listeners para recalcular la posición al cambiar el tamaño de la ventana o al hacer scroll
-
-    window.addEventListener("scroll", calculatePosition);
-
-    // Limpiar los listeners cuando el componente se desmonte
-    return () => {
-      console.log("Projects desmontado ❌");
-      window.removeEventListener("scroll", calculatePosition);
-    };
-  }, []); // Solo ejecutar una vez al montar el componente
-
+      calculatePosition();
+    }
+  }, [section, prInView]);
   const modalCardStyle = {
     position: "fixed",
     top: modalExpanded ? "50%" : position.top,
@@ -42,18 +40,17 @@ const Card = ({ card }) => {
     transform: modalExpanded ? "translate(-50%, -50%)" : "none",
     width: modalExpanded ? "60vw" : "250px",
     height: modalExpanded ? "90vh" : "280px",
-    background: "var(--darkGreen)",
     zIndex: 11,
     borderRadius: "8px",
     boxShadow: "5px 6px 10px rgba(0, 0, 0, 0.697)",
     transition: "all 0.5s ease-in-out",
     opacity: 1,
-    pointerEvents: modalExpanded ? "all" : "none",
     visibility: modalExpanded ? "visible" : "hidden",
-    overflowY: "auto",
+    pointerEvents: modalExpanded ? "none" : "all",
   };
 
   const handleExpand = () => {
+    console.log(position);
     setModalExpanded(true);
     setAnimInvisible(true);
     setTimeout(() => {
@@ -85,6 +82,7 @@ const Card = ({ card }) => {
           onClick={handleExpand}
           className={classnames(prueba.card, {
             [prueba.cardInvisible]: animInvisible,
+            [prueba.card_dark]: theme === "dark",
           })}
         >
           <img className={prueba.cardImg} src={card.image} alt="" />
@@ -93,7 +91,7 @@ const Card = ({ card }) => {
         <div
           style={modalCardStyle}
           className={classnames(prueba.card, prueba.modalCard, {
-            [prueba.expanded]: modalExpanded,
+            [prueba.modalC_dark]: theme === "dark",
           })}
         >
           <img

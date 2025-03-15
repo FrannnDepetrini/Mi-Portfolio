@@ -17,8 +17,22 @@
 
 .h1_container h1 {
   font-family: var(--archblack);
-  color: white;
+  color: var(--mediumGreen);
   font-size: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.h1_container.h1C_dark h1 {
+  color: white;
+}
+
+.spanGeneric {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.spanG_dark {
+  color: var(--lightBlue);
 }
 
 .timeline_container {
@@ -37,11 +51,7 @@
 }
 
 .timeline_element {
-  transform: scale(0.7, 0.7);
-}
-
-.vertical-timeline-element-content {
-  box-shadow: none;
+  transform: scale(0.8, 0.8);
 }
 
 .timeline_img {

@@ -25,15 +25,26 @@ body {
   background: rgb(19, 19, 19);
   background: linear-gradient(
       0deg,
+      rgba(81, 130, 103, 1) 10%,
+      rgba(173, 213, 191, 1) 37%,
+      rgba(81, 130, 103, 1) 88%
+    ),
+    url("https://res.cloudinary.com/ded9gllk0/image/upload/v1742065157/noisy-texture-200x200-o8-d13-c-f34379-t1_jhi361.png");
+  background-blend-mode: soft-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.slides_dark {
+  background: linear-gradient(
+      0deg,
       rgba(19, 19, 19, 1) 2%,
       rgba(39, 55, 46, 1) 40%,
       rgba(19, 19, 19, 1) 88%
     ),
     url("https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/noisy-texture-100x100-o3-d17-c-f34379-t1_abdmpe.png");
-  background-blend-mode: soft-light;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .loader_container {

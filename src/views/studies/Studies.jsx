@@ -8,8 +8,9 @@ import {
 
 import "react-vertical-timeline-component/style.min.css";
 import UseTranslation from "../../customHooks/useTranslation/useTranslation";
+import classNames from "classnames";
 
-const Studies = ({ onLoadImages }) => {
+const Studies = ({ onLoadImages, theme }) => {
   const [loadedImages, setLoadedImages] = useState(0);
   const translate = UseTranslation();
   const studiesImgs = [
@@ -36,28 +37,42 @@ const Studies = ({ onLoadImages }) => {
   }, [loadedImages]);
   return (
     <div className={styles.studies_container}>
-      <div className={styles.h1_container}>
+      <div
+        className={classNames(styles.h1_container, {
+          [styles.h1C_dark]: theme === "dark",
+        })}
+      >
         <h1>
-          {translate("myPlural")} <span>{translate("studies")}</span>
+          {translate("myPlural")}{" "}
+          <span
+            className={classNames(styles.spanGeneric, {
+              [styles.spanG_dark]: theme === "dark",
+            })}
+          >
+            {translate("studies")}
+          </span>
         </h1>
       </div>
       <div className={styles.timeLine_container}>
-        <VerticalTimeline lineColor="#518267" className={styles.timeLine}>
+        <VerticalTimeline
+          lineColor={theme === "dark" ? "#518267" : "#27372e"}
+          className={styles.timeLine}
+        >
           <VerticalTimelineElement
             iconClassName={styles.icon}
             iconStyle={{
-              background: "#518267",
+              background: theme === "dark" ? "#518267" : "#27372e",
               transform: "scale(0.25,0.25)",
-              color: "#fff",
             }}
             className={styles.timeline_element}
             date={translate("courseOfArg")}
             dateClassName={styles.date}
             contentStyle={{
               background: "none",
-              border: "1px solid white",
+              border: `1px solid ${theme === "dark" ? "white" : "#27372e"}`,
               color: "black",
               borderRadius: "10px",
+              boxShadow: "none",
             }}
           >
             <div className={styles.elements_container}>
@@ -72,18 +87,18 @@ const Studies = ({ onLoadImages }) => {
           <VerticalTimelineElement
             iconClassName={styles.icon}
             iconStyle={{
-              background: "#518267",
+              background: theme === "dark" ? "#518267" : "#27372e",
               transform: "scale(0.25,0.25)",
-              color: "#fff",
             }}
             className={styles.timeline_element}
             date={translate("courseOfCoder")}
             dateClassName={styles.date}
             contentStyle={{
               background: "none",
-              border: "1px solid white",
+              border: `1px solid ${theme === "dark" ? "white" : "#27372e"}`,
               color: "black",
               borderRadius: "10px",
+              boxShadow: "none",
             }}
           >
             <img className={styles.timeline_img} src={studiesImgs[1]}></img>
@@ -94,18 +109,18 @@ const Studies = ({ onLoadImages }) => {
           <VerticalTimelineElement
             iconClassName={styles.icon}
             iconStyle={{
-              background: "#518267",
+              background: theme === "dark" ? "#518267" : "#27372e",
               transform: "scale(0.25,0.25)",
-              color: "#fff",
             }}
             className={styles.timeline_element}
             date={translate("career")}
             dateClassName={styles.date}
             contentStyle={{
               background: "none",
-              border: "1px solid white",
+              border: `1px solid ${theme === "dark" ? "white" : "#27372e"}`,
               color: "black",
               borderRadius: "10px",
+              boxShadow: "none",
             }}
           >
             <div className={styles.elements_container}>

@@ -5,8 +5,9 @@ import styles from "./contact.module.css";
 import UseTranslation from "../../customHooks/useTranslation/useTranslation";
 import Modal from "../../components/modal/modal";
 import { useValidateInput } from "../../customHooks/useValidateInput/useValidateInput";
+import classNames from "classnames";
 
-const Contact = ({ onLoadImages }) => {
+const Contact = ({ onLoadImages, theme }) => {
   const [loadedImages, setLoadedImages] = useState(0);
   const [resultEmailjs, setResultEmailjs] = useState("");
   const [messageEmailjs, setMessageEmailjs] = useState("");
@@ -77,14 +78,30 @@ const Contact = ({ onLoadImages }) => {
   return (
     <>
       <div className={styles.contact_container}>
-        <div className={styles.h1_container}>
+        <div
+          className={classNames(styles.h1_container, {
+            [styles.h1C_dark]: theme === "dark",
+          })}
+        >
           <h1>
-            {translate("contactMe")} <span>!</span>
+            {translate("contactMe")}{" "}
+            <span
+              className={classNames(styles.spanGeneric, {
+                [styles.spanG_dark]: theme === "dark",
+              })}
+            >
+              !
+            </span>
           </h1>
         </div>
 
         <div className={styles.main_container}>
-          <form ref={form} className={styles.form_container}>
+          <form
+            ref={form}
+            className={classNames(styles.form_container, {
+              [styles.formC_dark]: theme === "dark",
+            })}
+          >
             <div className={styles.input_container}>
               <div className={styles.nameEmail_container}>
                 <label>{translate("name")}</label>
@@ -113,15 +130,30 @@ const Contact = ({ onLoadImages }) => {
                 ></textarea>
               </div>
             </div>
-            <div className={styles.button_container}>
+            <div
+              className={classNames(styles.button_container, {
+                [styles.buttonC_dark]: theme === "dark",
+              })}
+            >
               <button type="submit" onClick={onSend}>
                 {translate("send")}
               </button>
             </div>
           </form>
           <div className={styles.extrainfo_container}>
-            <h3>
-              {translate("alsoFind")} <span>:</span>
+            <h3
+              className={classNames(styles.contact_h3, {
+                [styles.cH3_dark]: theme === "dark",
+              })}
+            >
+              {translate("alsoFind")}{" "}
+              <span
+                className={classNames(styles.spanGeneric, {
+                  [styles.spanG_dark]: theme === "dark",
+                })}
+              >
+                :
+              </span>
             </h3>
             <div className={styles.media_container}>
               <a href="https://www.instagram.com/depeex/">

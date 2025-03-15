@@ -3,6 +3,7 @@ import { FiSun, IoMoonOutline } from "../../utils/icons";
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import UseTranslation from "../../customHooks/useTranslation/useTranslation";
+import classNames from "classnames";
 
 const Home = ({
   scrollSection,
@@ -10,27 +11,20 @@ const Home = ({
   loading,
   language,
   handleChangeLang,
+  theme,
+  onChangeTheme,
 }) => {
-  const [activeIndex, setActiveIndex] = useState("home");
   const [visibleImgInf, setVisibleImgInf] = useState(false);
   const [movedImg, setMovedImg] = useState(false);
-
+  const [activeSection, setActiveSection] = useState("home");
   const [loadedImages, setLoadedImages] = useState(0);
-  const [theme, setTheme] = useState("dark");
+
   const onScroll = (scrollId) => {
-    setActiveIndex(scrollId);
     scrollSection(scrollId);
+    setActiveSection(scrollId);
   };
-
+  console.log(activeSection);
   const translate = UseTranslation();
-
-  const handleTheme = () => {
-    if (theme == "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
 
   const showImgInf = () => {
     if (!visibleImgInf) {
@@ -66,7 +60,7 @@ const Home = ({
       onLoadImages();
     }
   }, [loadedImages]);
-
+  console.log(theme);
   return (
     <div className={styles.home_container}>
       <div className={styles.nav_container}>
@@ -76,71 +70,101 @@ const Home = ({
             className={styles.icon}
           ></img>
         </div>
-        <div className={styles.menu_container}>
+        <div
+          className={classNames(styles.menu_container, {
+            [styles.menu_dark]: theme === "dark",
+          })}
+        >
           <div
             onClick={() => onScroll("home")}
-            className={activeIndex == "home" ? styles.home_focus : styles.home}
+            className={classNames(styles.option, {
+              [styles.focus]: activeSection === "home",
+              [styles.focus_dark]: activeSection === "home" && theme === "dark",
+            })}
           >
             {translate("nav_home")}
           </div>
           <div
             onClick={() => onScroll("about")}
-            className={
-              activeIndex == "about" ? styles.about_focus : styles.about
-            }
+            className={classNames(styles.option, {
+              [styles.focus]: activeSection === "about",
+              [styles.focus_dark]:
+                activeSection === "about" && theme === "dark",
+            })}
           >
             {translate("nav_about")}
           </div>
           <div
             onClick={() => onScroll("projects")}
-            className={
-              activeIndex == "projects"
-                ? styles.projects_focus
-                : styles.projects
-            }
+            className={classNames(styles.option, {
+              [styles.focus]: activeSection === "projects",
+              [styles.focus_dark]:
+                activeSection === "projects" && theme === "dark",
+            })}
           >
             {translate("projects")}
           </div>
           <div
             onClick={() => onScroll("studies")}
-            className={
-              activeIndex == "studies" ? styles.studies_focus : styles.studies
-            }
+            className={classNames(styles.option, {
+              [styles.opt_dark]: theme === "dark",
+              [styles.focus]: activeSection === "studies",
+              [styles.focus_dark]:
+                activeSection === "studies" && theme === "dark",
+            })}
           >
             {translate("studies")}
           </div>
           <div
             onClick={() => onScroll("experience")}
-            className={
-              activeIndex == "experience"
-                ? styles.experience_focus
-                : styles.experience
-            }
+            className={classNames(styles.option, {
+              [styles.focus]: activeSection === "experience",
+              [styles.focus_dark]:
+                activeSection === "experience" && theme === "dark",
+            })}
           >
             {translate("nav_contact")}
           </div>
         </div>
-        <div className={styles.theme_container}>
+        <div
+          className={classNames(styles.theme_container, {
+            [styles.th_dark]: theme === "dark",
+          })}
+        >
           <button onClick={handleChangeLang}>{language}</button>
-          <div onClick={handleTheme}>
+          <div onClick={onChangeTheme}>
             {theme == "dark" ? <IoMoonOutline /> : <FiSun />}
           </div>
         </div>
       </div>
       <div className={styles.main_container}>
-        <div className={styles.h1_container}>
+        <div
+          className={classNames(styles.h1_container, {
+            [styles.h1C_dark]: theme === "dark",
+          })}
+        >
           <h1>
             {translate("welcome_first")} <br />
             {!loading && (
-              <ReactTyped
-                startDelay={800}
-                typeSpeed={60}
-                showCursor={false}
-                strings={["Francisco"]}
-              />
+              <span
+                className={classNames(styles.spanTyped, {
+                  [styles.spanDark]: theme === "dark",
+                })}
+              >
+                <ReactTyped
+                  startDelay={800}
+                  typeSpeed={60}
+                  showCursor={false}
+                  strings={["Francisco"]}
+                />
+              </span>
             )}
             <br />
-            <span>
+            <span
+              className={classNames(styles.spanTyped, {
+                [styles.spanDark]: theme === "dark",
+              })}
+            >
               {!loading && (
                 <ReactTyped
                   startDelay={1600}

@@ -31,12 +31,22 @@
   line-height: 1.1;
   font-size: 45px;
   font-family: var(--archblack);
-  color: white;
+  color: var(--mediumGreen);
   margin-bottom: 70px;
   margin-right: 90px;
+  transition: all 0.3s ease-in-out;
 }
 
-span {
+.h1C_dark h1 {
+  color: white;
+}
+
+.spanTyped {
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.spanDark {
   color: var(--lightBlue);
 }
 
@@ -66,31 +76,42 @@ span {
   justify-content: space-between;
   gap: 50px;
   margin-bottom: 100px;
-  border: 1px solid var(--lightBlue);
   padding: 12px;
   border-radius: 16px;
   font-family: "inter";
   font-weight: 500;
-  color: white;
   position: fixed;
   left: 480px;
   z-index: 2;
   backdrop-filter: blur(7px);
+  border: 1px solid var(--mediumGreen);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu_dark {
+  border: 1px solid var(--lightBlue);
+  color: white;
 }
 
 .menu_container div {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.menu_container div:hover {
+.menu_container.menu_dark div:hover {
   color: var(--lightBlue);
 }
 
-.home_focus,
-.about_focus,
-.projects_focus,
-.studies_focus,
-.experience_focus {
+.menu_container div:hover {
+  color: white;
+}
+
+.focus {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.focus_dark {
   color: var(--lightBlue);
 }
 
@@ -99,10 +120,18 @@ span {
   justify-content: space-between;
   gap: 18px;
   margin-bottom: 100px;
-  background-color: var(--lightBlue);
+  background-color: var(--mediumGreen);
+  transition: all 0.3s ease-in-out;
   padding: 12px;
   border-radius: 10px;
   width: 85px;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  left: 1400px;
+}
+
+.th_dark {
+  background-color: var(--lightBlue);
 }
 
 .theme_container button {

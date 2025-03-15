@@ -16,16 +16,28 @@
 }
 
 .h1_container {
-  display: flex;
-  align-content: flex-start;
-
+  margin-top: 20px;
   margin-left: 60px;
 }
 
 .h1_container h1 {
   font-family: var(--archblack);
-  color: white;
+  color: var(--mediumGreen);
   font-size: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.h1_container.h1C_dark h1 {
+  color: white;
+}
+
+.spanGeneric {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.spanG_dark {
+  color: var(--lightBlue);
 }
 
 h3 {
@@ -42,7 +54,7 @@ h3 {
 }
 
 .form_container {
-  background-color: var(--lightBlue);
+  background-color: var(--mediumGreen);
   width: 800px;
   display: flex;
   flex-direction: column;
@@ -50,6 +62,11 @@ h3 {
   padding: 30px;
   border-radius: 7px;
   height: 270px;
+  transition: all 0.3s ease-in-out;
+}
+
+.formC_dark {
+  background-color: var(--lightBlue);
 }
 
 label {
@@ -105,17 +122,25 @@ textarea {
 
 .button_container button {
   cursor: pointer;
-  color: white;
+
   width: 90px;
   height: 40px;
   border-radius: 5px;
   border: 0;
-  background-color: #27372e;
+
+  background-color: white;
+  color: var(--lightBlue);
   font-family: "inter";
   font-weight: 700;
   font-size: 17px;
   margin-right: 50px;
   transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonC_dark button {
+  color: white;
+  background-color: #27372e;
 }
 
 .button_container button:hover {
@@ -137,6 +162,15 @@ textarea {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease-in-out;
+}
+
+.contact_h3 {
+  color: var(--mediumGreen);
+  transition: all 0.3s ease-in-out;
+}
+
+.cH3_dark {
+  color: white;
 }
 
 .icon:hover {

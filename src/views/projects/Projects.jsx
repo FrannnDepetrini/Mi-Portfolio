@@ -3,8 +3,9 @@ import styles from "./projects.module.css";
 import { useEffect, useState } from "react";
 import { projectData } from "./projectData";
 import UseTranslation from "../../customHooks/useTranslation/useTranslation";
+import classNames from "classnames";
 
-const Projects = ({ onLoadImages, language }) => {
+const Projects = ({ onLoadImages, language, theme }) => {
   const [loadedImages, setLoadedImages] = useState(0);
 
   const amountImgs = projectData[language].length;
@@ -27,13 +28,27 @@ const Projects = ({ onLoadImages, language }) => {
 
   return (
     <div className={styles.projects_container}>
-      <div className={styles.h1_container}>
+      <div
+        className={classNames(styles.h1_container, {
+          [styles.h1C_dark]: theme === "dark",
+        })}
+      >
         <h1>
-          {translate("myPlural")} <span>{translate("projects")}</span>
+          {translate("myPlural")}{" "}
+          <span
+            className={classNames(styles.spanGeneric, {
+              [styles.spanG_dark]: theme === "dark",
+            })}
+          >
+            {translate("projects")}
+          </span>
         </h1>
       </div>
       <div className={styles.list_container}>
-        <ProjectsList cardData={projectData[language]}></ProjectsList>
+        <ProjectsList
+          theme={theme}
+          cardData={projectData[language]}
+        ></ProjectsList>
       </div>
     </div>
   );

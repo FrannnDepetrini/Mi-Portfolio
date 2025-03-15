@@ -16,7 +16,9 @@
 .overlay.visible {
   visibility: visible; /* Mostrar cuando el modal está expandido */
   opacity: 1; /* Hacer visible el overlay */
-  pointer-events: all; /* Permitir interacciones */
+  pointer-events: all;
+  cursor: pointer; /* Permitir interacciones */
+  z-index: 2;
 }
 .cards_container {
   position: relative;
@@ -24,7 +26,7 @@
 }
 
 .card {
-  background: var(--darkGreen);
+  background: var(--mediumGreen);
   border-radius: 8px;
   box-shadow: 5px 6px 10px rgb(0, 0, 0);
   width: 250px;
@@ -37,6 +39,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+.card_dark {
+  background: var(--darkGreen);
 }
 
 .cardInvisible {
@@ -54,6 +60,9 @@
 
 .card:hover {
   background-color: #1e2822;
+}
+
+.card.modalCard:hover {
 }
 
 .cardImg {
@@ -118,11 +127,16 @@
   color: white;
 }
 
-.modalCard::-webkit-scrollbar {
+/* .modalCard::-webkit-scrollbar {
   width: 8px;
+  opacity: 0;
 }
 
 .modalCard::-webkit-scrollbar-thumb {
   background-color: #0a0f0b;
   border-radius: 4px;
+} */
+
+.modalC_dark {
+  background-color: var(--darkGreen);
 }
