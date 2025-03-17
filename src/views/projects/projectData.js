@@ -17,6 +17,7 @@ export const projectData = {
       contributors2:
         " a modo de proyecto final en una de las materias de la carrera.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/DreamAir",
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export const projectData = {
       contributors2:
         " a modo de proyecto final en una de las materias de la carrera.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/DreamAirAPI",
     },
     {
       id: 3,
@@ -48,6 +50,7 @@ export const projectData = {
       contributors2:
         " a modo de proyecto final en una de las materias de la carrera.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/TPI_PROGRAMACION_2_Grupo_2",
     },
   ],
   En: [
@@ -67,6 +70,7 @@ export const projectData = {
       contributors2:
         " as a final project in one of the subjects of the degree.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/DreamAir",
     },
     {
       id: 2,
@@ -84,6 +88,7 @@ export const projectData = {
       contributors2:
         " as a final project in one of the subjects of the degree.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/DreamAirAPI",
     },
     {
       id: 3,
@@ -97,6 +102,7 @@ export const projectData = {
       contributors2:
         " as a final project in one of the subjects of the degree.",
       date: "( 2024 )",
+      link: "https://github.com/FrannnDepetrini/TPI_PROGRAMACION_2_Grupo_2",
     },
   ],
 };

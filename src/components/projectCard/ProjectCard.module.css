@@ -1,3 +1,22 @@
+/* .overlay {
+  transition: all 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.51);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+  cursor: pointer;
+} */
 .overlay {
   transition: all 0.3s ease-in-out;
   position: fixed;
@@ -16,10 +35,11 @@
 .overlay.visible {
   visibility: visible; /* Mostrar cuando el modal está expandido */
   opacity: 1; /* Hacer visible el overlay */
-  pointer-events: all;
   cursor: pointer; /* Permitir interacciones */
   z-index: 2;
+  pointer-events: all;
 }
+
 .cards_container {
   position: relative;
   width: fit-content;
@@ -55,14 +75,10 @@
   font-family: "inter";
   font-weight: 700;
   text-align: center;
-  /* transition: all 0.3s ease-in-out; */
 }
 
 .card:hover {
   background-color: #1e2822;
-}
-
-.card.modalCard:hover {
 }
 
 .cardImg {
@@ -75,16 +91,11 @@
   margin-bottom: 15px;
 }
 
-/* .h3Expanded {
-  transition: all 0.3s ease-in-out;
-  font-size: 30px;
-} */
-
 .text {
   display: flex;
   justify-content: center;
   margin-left: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   width: 90%;
   text-align: center;
   margin-top: 20px;
@@ -107,7 +118,7 @@
   margin: 0 auto;
   display: block;
   width: 80%;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 14px;
   margin-top: 20px;
@@ -127,16 +138,48 @@
   color: white;
 }
 
-/* .modalCard::-webkit-scrollbar {
-  width: 8px;
-  opacity: 0;
-}
-
-.modalCard::-webkit-scrollbar-thumb {
-  background-color: #0a0f0b;
-  border-radius: 4px;
-} */
-
 .modalC_dark {
   background-color: var(--darkGreen);
+}
+
+.link_container {
+  background-color: var(--lightBlue);
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.expanded_linkC {
+  opacity: 1;
+}
+
+.linkCode {
+  cursor: pointer;
+  pointer-events: all;
+  font-family: "inter";
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.card.modal_card:hover {
+  background: var(--mediumGreen) !important;
+}
+
+.card.modalC_dark:hover {
+  background: var(--darkGreen) !important;
+}
+
+.modal_card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal_card::-webkit-scrollbar-thumb {
+  background-color: #0a0f0b;
+  opacity: 0;
+  border-radius: 4px;
+  transition: opacity 0.3s ease-in-out;
 }
