@@ -15,22 +15,18 @@ const Card = ({ card, theme }) => {
 
   const calculatePosition = () => {
     if (cardRef.current && !isAlreadyCalc) {
-      console.log("me calcule otra vez");
       const rect = cardRef.current.getBoundingClientRect();
       setPosition({
         top: `${rect.top}px`,
         left: `${rect.left}px`,
       });
-      console.log(`${rect.top}px`);
-      console.log(`${rect.left}px`);
+
       setIsAlreadyCalc(true);
     }
   };
 
   useEffect(() => {
     if (section == "projects" && prInView) {
-      console.log("me voy a calcular");
-
       calculatePosition();
     }
   }, [section, prInView]);
@@ -57,26 +53,20 @@ const Card = ({ card, theme }) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         modalRef.current.scrollTo({ top: 0, behavior: "smooth" });
         handleClose();
-      } else {
-        console.log("click adentro");
       }
     };
 
     if (modalExpanded) {
-      console.log("me ejecuto");
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      console.log("me limpie");
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [modalExpanded]);
 
   const handleExpand = (e) => {
     e.stopPropagation();
-
-    console.log(position);
     setModalExpanded(true);
     setAnimInvisible(true);
     setTimeout(() => {
