@@ -17,41 +17,28 @@ const Page = () => {
 
   const { theme, handleChangeTheme } = useContext(ThemeContext);
 
-  const { section, handleSelectSection, handleInView } =
-    useContext(SectionContext);
+  const { handleSelectSection, handleInView } = useContext(SectionContext);
 
   const { ref: prRef, inView: prInView } = useInView({
     threshold: 1,
   });
-  const { ref: homeRef, inView: homeInView } = useInView({
+  const { ref: homeRef } = useInView({
     threshold: 1,
   });
-  const { ref: studiesRef, inView: studiesInView } = useInView({
+  const { ref: studiesRef } = useInView({
     threshold: 1,
   });
-  const { ref: contactRef, inView: contactInView } = useInView({
+  const { ref: contactRef } = useInView({
     threshold: 1,
   });
-  const { ref: aboutRef, inView: aboutInView } = useInView({
+  const { ref: aboutRef } = useInView({
     threshold: 1,
   });
   useEffect(() => {
-    // if (prInView) {
-    //   handleInView();
-    // }
-    if (homeInView) {
-      console.log("activo home");
-    } else if (aboutInView) {
-      console.log("activo about");
-    } else if (prInView) {
-      console.log("activo pr");
+    if (prInView) {
       handleInView();
-    } else if (studiesInView) {
-      console.log("activo studies");
-    } else if (contactInView) {
-      console.log("activo experience");
     }
-  }, [homeInView, aboutInView, studiesInView, prInView, contactInView]);
+  }, [prInView]);
 
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -61,7 +48,7 @@ const Page = () => {
       block: "start",
     });
   };
-  console.log(section);
+
   const handleImageLoaded = () => {
     setLoadedImages((prev) => prev + 1);
   };

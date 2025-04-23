@@ -8,7 +8,6 @@ export const SectionContextProvider = ({ children }) => {
 
   const handleInView = () => {
     setPrInView(true);
-    console.log("pase por aca");
   };
   const handleSelectSection = (section) => {
     setSection(section);

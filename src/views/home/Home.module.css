@@ -51,7 +51,6 @@
 }
 
 .icon {
-  /* background-image: url("https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/LogoDpx_f5zw6b.png"); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -140,7 +139,6 @@
   border: none;
   font-family: "inter";
   font-weight: 500;
-  /* z-index: 2; */
 }
 
 .theme_container button:hover {
@@ -162,8 +160,6 @@
 }
 .image {
   cursor: pointer;
-  /* background-color: green; */
-  /* background-image: url("https://res.cloudinary.com/ded9gllk0/image/upload/v1740783294/casaLowPoly_j6v8rb.png"); */
   background-position: center;
   transform: translate(50px, -60px);
 

@@ -23,7 +23,7 @@ const Home = ({
     scrollSection(scrollId);
     setActiveSection(scrollId);
   };
-  console.log(activeSection);
+
   const translate = UseTranslation();
 
   const showImgInf = () => {
@@ -60,7 +60,7 @@ const Home = ({
       onLoadImages();
     }
   }, [loadedImages]);
-  console.log(theme);
+
   return (
     <div className={styles.home_container}>
       <div className={styles.nav_container}>
