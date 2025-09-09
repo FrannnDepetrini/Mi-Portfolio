@@ -131,7 +131,7 @@ const Studies = ({ onLoadImages, theme }) => {
                 En la Universidad <br /> Tecnologica Nacional <br />
                 de rosario
               </h3>
-              <h3 className={styles.timeline_h3}>(2023 - Presente)</h3>
+              <h3 className={styles.timeline_h3}>(2023 - 2025)</h3>
             </div>
           </VerticalTimelineElement>
         </VerticalTimeline>

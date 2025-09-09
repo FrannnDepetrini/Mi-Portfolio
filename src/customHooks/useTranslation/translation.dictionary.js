@@ -20,7 +20,7 @@ export const dict_translations = {
     },
     {
       key: "p2_first",
-      value: "Soy un adolescente de 20 años que está cursando la carrera",
+      value: "Tengo 20 años y estoy recibido de la carrera",
     },
     { key: "p2_second", value: "“Tecnicatura en programacion”" },
     {
@@ -113,7 +113,7 @@ export const dict_translations = {
     },
     {
       key: "p2_first",
-      value: "I'm 20 years old teenager who is studying the ",
+      value: "I'm 20 years old and I graduated from the ",
     },
     { key: "p2_second", value: "“Programming Technician” career" },
     {

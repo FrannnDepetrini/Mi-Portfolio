@@ -13,6 +13,7 @@ const Home = ({
   handleChangeLang,
   theme,
   onChangeTheme,
+  section,
 }) => {
   const [visibleImgInf, setVisibleImgInf] = useState(false);
   const [movedImg, setMovedImg] = useState(false);
@@ -23,6 +24,10 @@ const Home = ({
     scrollSection(scrollId);
     setActiveSection(scrollId);
   };
+
+  useEffect(() => {
+    setActiveSection(section);
+  }, [section]);
 
   const translate = UseTranslation();
 
@@ -64,7 +69,7 @@ const Home = ({
   return (
     <div className={styles.home_container}>
       <div className={styles.nav_container}>
-        <div className={styles.nav_container}>
+        <div className={styles.logo_container}>
           <img
             src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740783290/LogoDpx_f5zw6b.png"
             className={styles.icon}
@@ -116,11 +121,11 @@ const Home = ({
             {translate("studies")}
           </div>
           <div
-            onClick={() => onScroll("experience")}
+            onClick={() => onScroll("contact")}
             className={classNames(styles.option, {
-              [styles.focus]: activeSection === "experience",
+              [styles.focus]: activeSection === "contact",
               [styles.focus_dark]:
-                activeSection === "experience" && theme === "dark",
+                activeSection === "contact" && theme === "dark",
             })}
           >
             {translate("nav_contact")}

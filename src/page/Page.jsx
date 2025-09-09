@@ -17,28 +17,39 @@ const Page = () => {
 
   const { theme, handleChangeTheme } = useContext(ThemeContext);
 
-  const { handleSelectSection, handleInView } = useContext(SectionContext);
+  const { handleSelectSection, handleInView, section } =
+    useContext(SectionContext);
 
   const { ref: prRef, inView: prInView } = useInView({
     threshold: 1,
   });
-  const { ref: homeRef } = useInView({
+  const { ref: homeRef, inView: homeInView } = useInView({
     threshold: 1,
   });
-  const { ref: studiesRef } = useInView({
+  const { ref: studiesRef, inView: studiesInView } = useInView({
     threshold: 1,
   });
-  const { ref: contactRef } = useInView({
+  const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 1,
   });
-  const { ref: aboutRef } = useInView({
+  const { ref: aboutRef, inView: aboutInView } = useInView({
     threshold: 1,
   });
+
   useEffect(() => {
-    if (prInView) {
+    if (homeInView) {
+      handleSelectSection("home");
+    } else if (aboutInView) {
+      handleSelectSection("about");
+    } else if (prInView) {
+      handleSelectSection("projects");
       handleInView();
+    } else if (studiesInView) {
+      handleSelectSection("studies");
+    } else if (contactInView) {
+      handleSelectSection("contact");
     }
-  }, [prInView]);
+  }, [prInView, homeInView, aboutInView, studiesInView, contactInView]);
 
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -83,6 +94,7 @@ const Page = () => {
           })}
         >
           <Home
+            section={section}
             language={language}
             handleChangeLang={handleChangeLang}
             loading={loading}
@@ -125,7 +137,7 @@ const Page = () => {
         </section>
         <section
           ref={contactRef}
-          id="experience"
+          id="contact"
           className={classNames(styles.slides, {
             [styles.slides_dark]: theme === "dark",
           })}
