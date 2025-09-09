@@ -12,8 +12,8 @@ export function useValidateInput(labelName, inputType = "genericText") {
     } else {
       switch (inputType) {
         case "genericText": {
-          if (text.length > 20) {
-            errorMsg = "No mas de 20 caracteres";
+          if (text.length > 230) {
+            errorMsg = "No mas de 230 caracteres";
           } else {
             errorMsg = "";
           }

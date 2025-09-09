@@ -12,7 +12,7 @@ const Contact = ({ onLoadImages, theme }) => {
   const [resultEmailjs, setResultEmailjs] = useState("");
   const [messageEmailjs, setMessageEmailjs] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-
+  const [message, setMessage] = useState("");
   const [validateName, errorsName] = useValidateInput("Name");
   const [validateEmail, errorsEmail] = useValidateInput("Email", "email");
   const [validateMsg, errorsMsg] = useValidateInput("Message");
@@ -56,6 +56,11 @@ const Contact = ({ onLoadImages, theme }) => {
     "https://res.cloudinary.com/ded9gllk0/image/upload/v1741048284/linkedin_zkbweu.png",
     "https://res.cloudinary.com/ded9gllk0/image/upload/v1741048284/github-removebg-preview_mx2axr.png",
   ];
+
+  const handleMessage = (e) => {
+    validateMsg(e.target.value);
+    setMessage(e.target.value);
+  };
 
   const amountImgs = mediaImgs.length;
 
@@ -122,12 +127,15 @@ const Contact = ({ onLoadImages, theme }) => {
               <div className={styles.message_container}>
                 <label>{translate("message")}</label>
                 <textarea
-                  onChange={(e) => validateMsg(e.target.value)}
+                  onChange={(e) => handleMessage(e)}
                   maxLength="230"
                   placeholder="Mensaje"
                   type="text"
                   name="message"
                 ></textarea>
+                <h4
+                  className={styles.counterMsg}
+                >{`${message.length} | 230`}</h4>
               </div>
             </div>
             <div
