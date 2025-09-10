@@ -158,13 +158,12 @@
 
 .image_container {
   height: 400px;
-  width: 800px;
 }
 .image {
   cursor: pointer;
   background-position: center;
   transform: translate(50px, -60px);
-
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;

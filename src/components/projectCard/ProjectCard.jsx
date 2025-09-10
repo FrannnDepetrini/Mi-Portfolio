@@ -57,13 +57,12 @@ const Card = ({ card, theme }) => {
     height: modalExpanded ? "85vh" : position.height + "px",
     zIndex: 11,
     borderRadius: "8px",
-    boxShadow: "5px 6px 10px rgba(0, 0, 0, 0.697)",
     visibility: opening ? "visible" : "hidden",
     transition:
       "top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease, transform 0.5s ease",
     opacity: 1,
     pointerEvents: modalExpanded ? "all" : "none",
-    overflowY: "auto",
+
     cursor: modalExpanded ? "auto" : "pointer",
     background: theme === "dark" ? "var(--darkGreen)" : "var(--mediumGreen)",
   };
@@ -76,9 +75,13 @@ const Card = ({ card, theme }) => {
       }
     };
     if (modalExpanded) {
+      document.body.style.overflow = "hidden";
+
       document.addEventListener("mousedown", handleClickOutside);
     }
     return () => {
+      document.body.style.overflow = "auto";
+
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [modalExpanded]);

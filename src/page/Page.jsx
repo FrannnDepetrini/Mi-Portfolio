@@ -21,19 +21,19 @@ const Page = () => {
     useContext(SectionContext);
 
   const { ref: prRef, inView: prInView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
   const { ref: homeRef, inView: homeInView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
   const { ref: studiesRef, inView: studiesInView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
   const { ref: contactRef, inView: contactInView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
   const { ref: aboutRef, inView: aboutInView } = useInView({
-    threshold: 1,
+    threshold: 0.7,
   });
 
   useEffect(() => {

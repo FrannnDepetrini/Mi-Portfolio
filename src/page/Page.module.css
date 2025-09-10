@@ -5,7 +5,11 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
 }
 
 * {
