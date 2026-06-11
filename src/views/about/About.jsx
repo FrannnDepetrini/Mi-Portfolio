@@ -94,7 +94,7 @@ const About = ({ onLoadImages, theme }) => {
           className={classNames(styles.image_container, {
             [styles.imgCont_dark]: theme === "dark",
           })}
-        ></div>
+        ><img className={classNames(styles.img_about)} src="https://res.cloudinary.com/ded9gllk0/image/upload/v1781216788/1773712461537_zyosw2.jpg" alt="" /></div>
       </div>
     </div>
   );

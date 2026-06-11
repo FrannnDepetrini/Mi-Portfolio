@@ -158,22 +158,49 @@
 
 .image_container {
   height: 400px;
+  transition: transform 0.2s ease;
 }
+
+
+
+
+.image_container:hover {
+  animation: wiggle 0.5s ease;
+
+}
+
+@keyframes wiggle {
+   0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
 .image {
   cursor: pointer;
   background-position: center;
-  transform: translate(50px, -60px);
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
   filter: drop-shadow(1px 12px 4px rgba(19, 19, 19, 0.729));
   transition: transform 0.5s ease-in-out;
-  clip-path: inset(20px 120px 20px 85px);
+  
 }
 
 .moved {
-  transform: translate(50px, -125px);
+  transform: translate(0, -125px);
 }
 
 .imgInf {
@@ -198,17 +225,37 @@
   margin-top: 250px;
 }
 
-@media screen and (max-width: 728px) {
+@media (max-width: 767px) {
   .main_container {
     flex-direction: column;
+    margin-top : 250px;
+    align-items: start;
+  }
+
+  .image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    
+  }
+
+  .image_container img {
+    width: 70%;
     height: 70%;
   }
 
   .h1_container {
     display: flex;
     justify-content: start;
-    margin-left: 50px;
-    margin-right: 0;
+    padding-left: 50px;
+    font-size:0;
+    width: 100%;
+
+  }
+
+  .h1_container h1 {
+    
   }
 
   .icon {
@@ -222,28 +269,11 @@
     align-items: center;
   }
 
-  .h1_container h1 {
-    font-size: 25px;
-  }
+  
 
-  .image_container {
-    height: 250px;
-    width: 150px;
-  }
-  .image {
-    transform: translate(-170px, -30px);
-    height: 100%;
-    filter: drop-shadow(1px 12px 4px rgba(19, 19, 19, 0.729));
-    clip-path: inset(10px 50px 0px 50px);
-  }
-
-  .moved {
-    transform: translate(-170px, -90px);
-  }
-  br {
-    display: none;
-  }
-
+  
+  
+  
   .imgInf {
     left: -30px;
     bottom: 90px;

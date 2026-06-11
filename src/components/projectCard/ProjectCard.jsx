@@ -48,13 +48,16 @@ const Card = ({ card, theme }) => {
     }, 850);
   };
 
+  const isMobile = window.innerWidth <= 767;
+
   const modalCardStyle = position && {
+    willChange: "top, left, width, height, transform",
     position: "fixed",
     top: modalExpanded ? "50%" : position.top + "px",
     left: modalExpanded ? "50%" : position.left + "px",
     transform: modalExpanded ? "translate(-50%, -50%)" : "none",
-    width: modalExpanded ? "60vw" : position.width + "px",
-    height: modalExpanded ? "85vh" : position.height + "px",
+    width: modalExpanded ? (isMobile ? "90vw" : "50vw") : position.width + "px",
+    height: modalExpanded ? (isMobile ? "50vh" : "80vh") : position.height + "px",
     zIndex: 11,
     borderRadius: "8px",
     visibility: opening ? "visible" : "hidden",

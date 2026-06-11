@@ -154,13 +154,29 @@
   background: var(--darkGreen) !important;
 }
 
-/* .modal_card::-webkit-scrollbar {
-  background: transparent;
-} */
+@media (max-width: 767px) {
 
-/* .modal_card::-webkit-scrollbar-thumb {
-  background-color: #0a0f0b;
-  opacity: 0;
-  border-radius: 4px;
-  transition: opacity 0.3s ease-in-out;
-} */
+  .card {
+    width: 50vw
+  }
+
+  .cardh3 {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 20px;
+  }
+
+  .foot {
+    font-size: 18px;
+  }
+
+  .spanCard {
+    font-size: 18px;
+  }
+
+  .link_container {
+    padding: 12px;
+    font-size: 18px;
+  }
+}

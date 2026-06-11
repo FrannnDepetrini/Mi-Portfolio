@@ -16,6 +16,7 @@ const Studies = ({ onLoadImages, theme }) => {
   const studiesImgs = [
     "https://res.cloudinary.com/ded9gllk0/image/upload/v1740988772/Titulo_Arg.Programa_bzu8ez.png",
     "https://res.cloudinary.com/ded9gllk0/image/upload/v1740988776/Titulo_Coder_House_sgrlle.png",
+    "https://res.cloudinary.com/ded9gllk0/image/upload/v1781218696/ChatGPT_Image_11_jun_2026_07_58_05_p.m._silp0h.png"
   ];
 
   const amountImgs = studiesImgs.length;
@@ -74,6 +75,8 @@ const Studies = ({ onLoadImages, theme }) => {
                 color: "black",
                 borderRadius: "10px",
                 boxShadow: "none",
+                textAlign:"center"
+                
               }}
             >
               <div className={styles.elements_container}>
@@ -100,6 +103,7 @@ const Studies = ({ onLoadImages, theme }) => {
                 color: "black",
                 borderRadius: "10px",
                 boxShadow: "none",
+                textAlign:"center"
               }}
             >
               <img className={styles.timeline_img} src={studiesImgs[1]}></img>
@@ -122,16 +126,14 @@ const Studies = ({ onLoadImages, theme }) => {
                 color: "black",
                 borderRadius: "10px",
                 boxShadow: "none",
+                textAlign:"center"
               }}
             >
+              <img className={styles.timeline_img} src={studiesImgs[2]}></img>
               <div className={styles.elements_container}>
                 <h1 className={styles.timeline_h1}>
                   Tecnicatura en programacion
                 </h1>
-                <h3 className={styles.timeline_h3}>
-                  En la Universidad <br /> Tecnologica Nacional <br />
-                  de rosario
-                </h3>
                 <h3 className={styles.timeline_h3}>(2023 - 2025)</h3>
               </div>
             </VerticalTimelineElement>

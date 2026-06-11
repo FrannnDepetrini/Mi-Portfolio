@@ -186,7 +186,7 @@ const Home = ({
         </div>
         <div className={styles.image_container}>
           <img
-            src="https://res.cloudinary.com/ded9gllk0/image/upload/v1740783294/casaLowPoly_j6v8rb.png"
+            src="https://res.cloudinary.com/ded9gllk0/image/upload/v1781213773/casalowpoly.png"
             onClick={showImgInf}
             className={`${styles.image} ${movedImg ? styles.moved : ""}`}
           ></img>
