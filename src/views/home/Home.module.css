@@ -232,6 +232,19 @@
     align-items: start;
   }
 
+  .menu_container {
+    display: none;
+  }
+
+  .icon {
+    left: 0;
+
+  }
+  .theme_container {
+    right: 20px;
+    z-index: 1;
+  }
+
   .image_container {
     display: flex;
     justify-content: center;
@@ -251,11 +264,13 @@
     padding-left: 50px;
     font-size:0;
     width: 100%;
+    
 
   }
 
   .h1_container h1 {
-    
+    width: 100%;
+    margin-right: 0;
   }
 
   .icon {
@@ -264,9 +279,10 @@
   }
 
   .nav_container {
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
+    flex-direction: row;
   }
 
   

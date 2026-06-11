@@ -39,3 +39,10 @@
 .spanG_dark {
   color: var(--lightBlue);
 }
+
+
+@media (max-width: 767px) {
+  .h1_container {
+    margin-left: 10px;
+  }
+}

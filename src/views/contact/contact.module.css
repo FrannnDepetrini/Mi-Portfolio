@@ -5,6 +5,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: 1px solid red;
 }
 
 .contact_container {
@@ -189,6 +190,10 @@ textarea {
 
 
 @media (max-width: 767px) {
+
+  .h1_container {
+    margin-left: 10px;
+  }
  .main_container {
   margin: 0;
   margin-top: 50px;
@@ -216,12 +221,13 @@ textarea {
  }
 
  .extrainfo_container {
-  width: 80%;
+  width: 100%;
   align-items: start;
+  padding-left: 10px;
 }
 
   .media_container {
-    width: 25%;
+    width: 40%;
   }
 
   input {

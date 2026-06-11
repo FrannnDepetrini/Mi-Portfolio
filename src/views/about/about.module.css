@@ -111,6 +111,10 @@
 
 
 @media (max-width:767px) {
+
+  .h1_container {
+    margin-left: 10px;
+  }
   .info_container {
     flex-direction: column;
     align-items: center;
