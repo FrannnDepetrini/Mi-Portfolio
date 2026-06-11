@@ -5,7 +5,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  outline: 1px solid red;
 }
 
 .contact_container {
@@ -121,6 +120,9 @@ textarea {
 }
 
 .button_container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   width: 90px;
@@ -221,13 +223,18 @@ textarea {
  }
 
  .extrainfo_container {
-  width: 100%;
+  width: 80%;
   align-items: start;
   padding-left: 10px;
 }
-
+.button_container button {
+    margin-right: 0px;
+}
+.contact_h3 {
+  width: 100%;
+}
   .media_container {
-    width: 40%;
+    width: 45%;
   }
 
   input {
