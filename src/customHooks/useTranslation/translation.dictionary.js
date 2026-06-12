@@ -20,12 +20,16 @@ export const dict_translations = {
     },
     {
       key: "p2_first",
-      value: "Tengo 20 años y estoy recibido de la carrera",
+      value: "Tengo 21 años y estoy recibido de la carrera",
     },
     { key: "p2_second", value: "“Tecnicatura en programacion”" },
     {
       key: "p2_third",
       value: "en la Universidad Tecnologica Nacional de Rosario ( UTN )",
+    },
+    {
+      key: "p2_fourth",
+      value: "Actualmente, estoy cursando la carrera de Ingeniería en Sistemas en esa misma institución",
     },
     {
       key: "p3_first",
@@ -113,12 +117,17 @@ export const dict_translations = {
     },
     {
       key: "p2_first",
-      value: "I'm 20 years old and I graduated from the ",
+      value: "I'm 21 years old and I graduated from the ",
     },
     { key: "p2_second", value: "“Programming Technician” career" },
     {
       key: "p2_third",
       value: "at the “Universidad Tecnologica Nacional” of Rosario (UTN)",
+    },
+    {
+      key: "p2_fourth",
+      value: "I am currently pursuing a degree in Systems Engineering at the same institution",
+
     },
     {
       key: "p3_first",

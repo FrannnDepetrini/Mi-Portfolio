@@ -38,7 +38,7 @@ const About = ({ onLoadImages, theme }) => {
             >
               Francisco Depetrini
             </span>
-            , {translate("p1_second")}
+            , {translate("p1_second")}.
           </p>
           <p>
             {translate("p2_first")}{" "}
@@ -50,7 +50,9 @@ const About = ({ onLoadImages, theme }) => {
               {translate("p2_second")}
             </span>{" "}
             {translate("p2_third")}.
+            {" "}{translate("p2_fourth")}.
           </p>
+          
           <p>
             {translate("p3_first")}{" "}
             <span
