@@ -164,19 +164,23 @@
     font-size: 25px;
   }
   .text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .foot {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .spanCard {
-    font-size: 18px;
+    font-size: 14px;
+  }
+
+  .text {
+    margin-left: 0;
   }
 
   .link_container {
-    padding: 12px;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 14px;
   }
 }

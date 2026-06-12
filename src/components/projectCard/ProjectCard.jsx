@@ -57,7 +57,7 @@ const Card = ({ card, theme }) => {
     left: modalExpanded ? "50%" : position.left + "px",
     transform: modalExpanded ? "translate(-50%, -50%)" : "none",
     width: modalExpanded ? (isMobile ? "90vw" : "50vw") : position.width + "px",
-    height: modalExpanded ? (isMobile ? "50vh" : "80vh") : position.height + "px",
+    height: modalExpanded ? "80vh" : position.height + "px",
     zIndex: 11,
     borderRadius: "8px",
     visibility: opening ? "visible" : "hidden",
