@@ -156,6 +156,11 @@
 
 @media (max-width: 767px) {
 
+
+  .overlay {
+    backdrop-filter: blur(0px);
+  }
+
   .card {
     width: 50vw
   }
