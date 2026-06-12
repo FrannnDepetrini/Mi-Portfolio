@@ -16,7 +16,12 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  
 }
+
 
 .page_container {
   width: 100%;
